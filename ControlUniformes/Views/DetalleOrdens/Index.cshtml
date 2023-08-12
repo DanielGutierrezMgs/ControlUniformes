@@ -1,0 +1,71 @@
+﻿@model IEnumerable<ControlUniformes.Models.Entities.DetalleOrden>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Articulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPiezas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tallas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecioUnitario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImporteTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdOrdenNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Articulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPiezas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tallas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioUnitario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImporteTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdOrdenNavigation.IdOrden)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdDetalle">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdDetalle">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdDetalle">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

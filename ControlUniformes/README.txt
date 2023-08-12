@@ -1,0 +1,1 @@
+﻿Scaffold-Dbcontext "Server=DESKTOP-8NB7MQ2\UNIFORMESCONTROL;Database=master;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutPutDir Models/Entities
